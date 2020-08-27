@@ -1,9 +1,10 @@
 <?php
 
 require_once(__DIR__ . '/User.php');
+require_once(__DIR__ . '/Employee.php');
 
-$users = [
-  [
+ $users = [
+   [
     'id' => 1,
     'nome' => 'Dennis',
     'cognome' => 'Olimpio ',
@@ -46,7 +47,9 @@ $users = [
 
 foreach ($users as $user_single) {
 
-  $user = new User($user_single['id'], $user_single['nome'], $user_single['cognome'], $user_single['email'], $user_single['provenienza'], $user_single['eta'], $user_single['descrizione']);
+  $user = new User($user_single['id'], $user_single['nome'], $user_single['cognome'],
+  $user_single['email'], $user_single['provenienza'], $user_single['eta'], $user_single['descrizione']);
+
   $data = $user->getUserData();
 
   ?>
@@ -65,6 +68,10 @@ foreach ($users as $user_single) {
 
 }
 
+$employee = new Employee('1', 'dennis', 'olimpio', 'napoli ', 66, 'de.test@bool.it', 'dedededede de ded ed');
+$employee-> setSconto();
+var_dump($employee);
 
 
-?>
+
+?> 

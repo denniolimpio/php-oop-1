@@ -9,9 +9,10 @@ class User {
   public $eta;
   public $email;
   public $descrizione;
+  public $sconto = 10;
 
 
-  public function __construct( $_id, $_nome, $_cognome, $_provenienza, $_eta, $_email, $_descrizione) {
+  public function __construct( $_id, $_nome, $_cognome, $_provenienza, $_eta, $_email, $_descriziones) {
     $this->id = $_id;
     $this->nome = $_nome;
     $this->cognome = $_cognome;
@@ -19,6 +20,8 @@ class User {
     $this->eta = $_eta;
     $this->email = $_email;
     $this->descrizione = $_descrizione;
+    $this->sconto = $_sconto;
+
   }
 
   public function getUserData() {
@@ -30,8 +33,10 @@ class User {
       'eta' => $this->eta,
       'email' => $this->email,
       'descrizione' => $this->descrizione,
+      'sconto' => $this->sconto
     ];
   }
+
 
 }
 
