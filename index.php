@@ -1,6 +1,6 @@
 <?php
 
-require_once(__DIR__ . "/User.php");
+require_once(__DIR__ . '/User.php');
 
 $users = [
   [
@@ -33,7 +33,7 @@ $users = [
   [
     'id' => 4,
     'nome' => 'Timoteo',
-    'cognome' => 'Ferrari ',
+    'cognome' => 'Esposito ',
     'provenienza' => 'Formia',
     'eta' => 23,
     'email' => 'teoteo@test.it',
@@ -42,9 +42,29 @@ $users = [
 
 ];
 
-var_dump($users)
 
-// $utente = new users
+
+foreach ($users as $user_single) {
+
+  $user = new User($user_single['id'], $user_single['nome'], $user_single['cognome'], $user_single['email'], $user_single['provenienza'], $user_single['eta'], $user_single['descrizione']);
+  $data = $user->getUserData();
+
+  ?>
+  <div>
+    <ul>
+        <li> id: <?php  echo $data['id']; ?></li>
+        <li> nome: <?php echo $data['nome']; ?></li>
+        <li> cognome: <?php echo $data['cognome']; ?></li>
+        <li> email: <?php echo $data['email']; ?></li>
+        <li> provenienza: <?php echo $data['provenienza']; ?></li>
+        <li> eta: <?php echo $data['eta']; ?> </li>
+        <li> descrizione: <?php echo $data['descrizione']; ?></li>
+    </ul>
+  </div>
+  <?php
+
+}
+
 
 
 ?>
